@@ -1,15 +1,31 @@
 {
   "expo": {
-    "name": "solito-blank",
-    "slug": "solito-blank",
+    "name": "solito-auth-guide",
+    "slug": "solito-auth-guide",
     "version": "1.0.0",
-    "scheme": "solito-blank",
+    "scheme": "solito-auth-guide",
     "platforms": [
       "ios",
       "android"
     ],
     "ios": {
-      "bundleIdentifier": "com.solito.blank"
-    }
+      "bundleIdentifier": "com.solito.auth"
+    },
+    "android": {
+      "package": "com.solito.auth"
+    },
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/perf",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ]
   }
 }
