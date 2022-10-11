@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>942378150104-0tc12atje7u3m1chludu57lfag1gqq1l.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.942378150104-0tc12atje7u3m1chludu57lfag1gqq1l</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC43gG_YGi8KRD5eIctp8nz4zEIKD776jE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>942378150104</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.solito.auth</string>
+	<key>PROJECT_ID</key>
+	<string>solitoauthguide</string>
+	<key>STORAGE_BUCKET</key>
+	<string>solitoauthguide.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:942378150104:ios:e5a297412b3bb95bc24fad</string>
+</dict>
+</plist>

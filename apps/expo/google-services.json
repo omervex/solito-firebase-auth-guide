@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "942378150104",
+    "project_id": "solitoauthguide",
+    "storage_bucket": "solitoauthguide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942378150104:android:b6b4ee7f741acc2ec24fad",
+        "android_client_info": {
+          "package_name": "com.solito.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942378150104-53jg5o438befqeribslroc8r94d2fhue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdM3yLou71MbE4JEFVYb7f7gJlK1hPOqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942378150104-53jg5o438befqeribslroc8r94d2fhue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "942378150104-0tc12atje7u3m1chludu57lfag1gqq1l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.solito.auth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
