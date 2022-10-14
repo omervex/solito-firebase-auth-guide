@@ -2475,6 +2475,11 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
+"@react-native-firebase/auth@^15.7.0":
+  version "15.7.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-15.7.0.tgz#bc133cb6e0f33fd307e8d3dfa7ae04b5980d7fbb"
+  integrity sha512-0HJfCc0SUcSFbz5SyZWZOJkhtn+kOU8ytuPHM+vOJBeg5owJzmLnFx1ZI20gHU5cxhN3UQy/GKMPvlIcDeW7Bg==
+
 "@react-native-firebase/crashlytics@^15.7.0":
   version "15.7.0"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-15.7.0.tgz#917692582e47b19074bfbf0960b86fd9ca7a5b6d"
@@ -2489,6 +2494,11 @@
   integrity sha512-uvKVCRyYuTgkq2uBenC4XiefTifCJhXkerlm/SN82uUTMlqpFPLz8I2mw1n+5KjSRJiAbhExCHphmfVsDzs2Gg==
   dependencies:
     "@expo/config-plugins" "^5.0.1"
+
+"@react-native-google-signin/google-signin@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-google-signin/google-signin/-/google-signin-8.0.0.tgz#f8202c121b4df185eb165dc58b35544c643af25f"
+  integrity sha512-GV0EGXUfiqk9Kav74zOq4ww0rAhMUlwmIGEf94X2ptnxfKu9TufeTig1zuDQGasgFlziWju/Ya2WeC+7TYSbxw==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
