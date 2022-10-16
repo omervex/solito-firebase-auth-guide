@@ -1,6 +1,14 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged, User } from "firebase/auth";
+import {
+  getAuth,
+  onAuthStateChanged,
+  User,
+  NextOrObserver,
+  ErrorFn,
+  CompleteFn,
+  Unsubscribe
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB9hQHuShwy_1nbZB46njNY_-rOQtBazmo",
@@ -15,10 +23,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const auth = getAuth();
+export const auth = getAuth();
 
-const onAuthStateChangedFunc = (callback: (user: User) => void) => {
-  return onAuthStateChanged(auth, callback);
+const onAuthStateChangedFunc = (
+  nextOrObserver: NextOrObserver<User>,
+  error?: ErrorFn,
+  completed?: CompleteFn
+): Unsubscribe => {
+  return onAuthStateChanged(auth, nextOrObserver, error, completed);
 }
 
 export {

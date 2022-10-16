@@ -1,14 +1,11 @@
 import auth, {
-  FirebaseAuthTypes
+  FirebaseAuthTypes,
 } from '@react-native-firebase/auth';
 
-const onAuthStateChanged = (callback: (user: FirebaseAuthTypes.User) => void) => {
-  return auth().onAuthStateChanged(callback);
+const onAuthStateChanged = (listener: FirebaseAuthTypes.AuthListenerCallback) => {
+  return auth().onAuthStateChanged(listener);
 }
-
-const signInAnonymously = async () => await auth().signInAnonymously();
 
 export {
   onAuthStateChanged,
-  signInAnonymously,
 }

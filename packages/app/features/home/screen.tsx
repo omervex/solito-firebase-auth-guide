@@ -1,9 +1,14 @@
+
+import SignInWithGoogleButton from 'app/components/social-login-buttons/SignInWithGoogleButton'
+import { userContext } from 'app/context/user-context/user-context'
 import { Text, useSx, View, H1, P, Row, A } from 'dripsy'
+import { useContext } from 'react'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
 
 export function HomeScreen() {
   const sx = useSx()
+  const { user, userInitialized } = useContext(userContext);
 
   return (
     <View
@@ -70,6 +75,19 @@ export function HomeScreen() {
           </Text>
         </MotiLink>
       </Row>
+
+      <View sx={{ marginY: 30, alignItems: 'center' }}>
+        {userInitialized && (
+          <Text sx={{ fontSize: 16, color: 'black', fontWeight: 'bold', marginY: 10}}>
+            {user ?
+              'Signed in as: ' + user.displayName :
+              'You are not sigend in'}
+          </Text>
+        )}
+
+        <SignInWithGoogleButton />
+      </View>
+
     </View>
   )
 }
