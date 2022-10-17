@@ -1,19 +1,24 @@
+import AuthenticatedScreen from 'app/components/AuthenticatedScreen'
+import { userContext } from 'app/context/user-context/user-context'
 import { View, Text } from 'dripsy'
-import { createParam } from 'solito'
+import { useContext } from 'react'
 import { TextLink } from 'solito/link'
 
-const { useParam } = createParam<{ id: string }>()
-
 export function UserDetailScreen() {
-  const [id] = useParam('id')
+  const { user } = useContext(userContext);
 
   return (
-    <View sx={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text
-        sx={{ textAlign: 'center', mb: 16, fontWeight: 'bold' }}
-      >{`User ID: ${id}`}</Text>
+    <AuthenticatedScreen>
+      {user &&
+        <View sx={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text
+            sx={{ textAlign: 'center', mb: 16, fontWeight: 'bold' }}
+          >
+            Welcome {user.displayName}!
+          </Text>
 
-      <TextLink href="/">👈 Go Home</TextLink>
-    </View>
+          <TextLink href="/">👈 Go Home</TextLink>
+        </View>}
+    </AuthenticatedScreen>
   )
 }

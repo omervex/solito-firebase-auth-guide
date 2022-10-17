@@ -1,10 +1,12 @@
 
 import SignInWithGoogleButton from 'app/components/social-login-buttons/SignInWithGoogleButton'
 import { userContext } from 'app/context/user-context/user-context'
-import { Text, useSx, View, H1, P, Row, A } from 'dripsy'
+import { Text, useSx, View, H1, P, Row, A, ActivityIndicator } from 'dripsy'
 import { useContext } from 'react'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
+import Ionicons from '@expo/vector-icons/Ionicons'
+import auth from '@react-native-firebase/auth';
 
 export function HomeScreen() {
   const sx = useSx()
@@ -14,13 +16,20 @@ export function HomeScreen() {
     <View
       sx={{ flex: 1, justifyContent: 'center', alignItems: 'center', p: 16 }}
     >
-      <H1 sx={{ fontWeight: '800' }}>Welcome to Solito.</H1>
+      <H1 sx={{ fontWeight: '800', textAlign: 'center' }}>
+        Welcome to Solito + Firebase auth.
+      </H1>
       <View sx={{ maxWidth: 600 }}>
         <P sx={{ textAlign: 'center' }}>
           Here is a basic starter to show you how you can navigate from one
           screen to another. This screen uses the same code on Next.js and React
           Native.
         </P>
+
+        <P sx={{ textAlign: 'center' }}>
+          The user profile is a protected route, available only for signed in users.
+        </P>
+
         <P sx={{ textAlign: 'center' }}>
           Solito is made by{' '}
           <A
@@ -37,19 +46,54 @@ export function HomeScreen() {
           .
         </P>
       </View>
-      <View sx={{ height: 32 }} />
+
+      <View sx={{ height: 20 }} />
+
+      <View sx={{ alignItems: 'center' }}>
+        {userInitialized && (
+          <>
+            {user &&
+              <View sx={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Ionicons name="checkmark-circle" size={20} color="green" />
+                <Text sx={{ fontSize: 16, color: 'black', fontWeight: 'bold', marginY: 10, marginX: 1 }}>
+                  Signed in as {user.displayName}
+                </Text>
+              </View>}
+
+            {!user && (
+              <>
+                <Text sx={{ fontSize: 16, color: 'black', marginY: 10 }}>
+                  Please sign in
+                </Text>
+                <SignInWithGoogleButton />
+              </>
+            )}
+          </>
+        )}
+
+        {!userInitialized && (
+          <ActivityIndicator
+            color="gray"
+            size="large"
+          />
+        )}
+
+      </View>
+
+      <View sx={{ height: 16 }} />
+
       <Row>
         <TextLink
-          href="/user/fernando"
+          href="/user"
           textProps={{
             style: sx({ fontSize: 16, fontWeight: 'bold', color: 'blue' }),
           }}
         >
-          Regular Link
+          User Link
         </TextLink>
         <View sx={{ width: 32 }} />
         <MotiLink
-          href="/user/fernando"
+          href="/user"
           animate={({ hovered, pressed }) => {
             'worklet'
 
@@ -71,23 +115,11 @@ export function HomeScreen() {
             selectable={false}
             sx={{ fontSize: 16, color: 'black', fontWeight: 'bold' }}
           >
-            Moti Link
+            User Moti Link
           </Text>
         </MotiLink>
       </Row>
 
-      <View sx={{ marginY: 30, alignItems: 'center' }}>
-        {userInitialized && (
-          <Text sx={{ fontSize: 16, color: 'black', fontWeight: 'bold', marginY: 10}}>
-            {user ?
-              'Signed in as: ' + user.displayName :
-              'You are not sigend in'}
-          </Text>
-        )}
-
-        <SignInWithGoogleButton />
-      </View>
-
-    </View>
+    </View >
   )
 }

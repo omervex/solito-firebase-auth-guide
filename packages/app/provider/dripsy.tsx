@@ -5,6 +5,7 @@ const theme = makeTheme({
   text: {
     p: {
       fontSize: 16,
+      lineHeight: 24,
     },
   },
 })
