@@ -1,9 +1,9 @@
 import { userContext } from "app/context/user-context/user-context"
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { View, P, ActivityIndicator } from 'dripsy'
 import { TextLink } from 'solito/link'
 
-export default function AuthenticatedScreen({ children }) {
+export default function AuthenticatedScreen({ children }: {children: React.ReactNode}) {
   const { user, userInitialized } = useContext(userContext)
 
   // link to your auth page
