@@ -41,6 +41,7 @@ export default function AuthenticatedScreen({ children }: {children: React.React
   } else {
     return (
       <View sx={{
+        flex:1,
         justifyContent: 'center',
         alignItems: 'center'
       }}>

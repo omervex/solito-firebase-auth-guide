@@ -6,7 +6,6 @@ import { useContext } from 'react'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import auth from '@react-native-firebase/auth';
 
 export function HomeScreen() {
   const sx = useSx()
@@ -49,39 +48,6 @@ export function HomeScreen() {
 
       <View sx={{ height: 20 }} />
 
-      <View sx={{ alignItems: 'center' }}>
-        {userInitialized && (
-          <>
-            {user &&
-              <View sx={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Ionicons name="checkmark-circle" size={20} color="green" />
-                <Text sx={{ fontSize: 16, color: 'black', fontWeight: 'bold', marginY: 10, marginX: 1 }}>
-                  Signed in as {user.displayName}
-                </Text>
-              </View>}
-
-            {!user && (
-              <>
-                <Text sx={{ fontSize: 16, color: 'black', marginY: 10 }}>
-                  Please sign in
-                </Text>
-                <SignInWithGoogleButton />
-              </>
-            )}
-          </>
-        )}
-
-        {!userInitialized && (
-          <ActivityIndicator
-            color="gray"
-            size="large"
-          />
-        )}
-
-      </View>
-
-      <View sx={{ height: 16 }} />
-
       <Row>
         <TextLink
           href="/user"
@@ -119,6 +85,39 @@ export function HomeScreen() {
           </Text>
         </MotiLink>
       </Row>
+
+      <View sx={{ height: 40 }} />
+
+      {!userInitialized && (
+        <ActivityIndicator
+          color="gray"
+          size="large"
+        />
+      )}
+
+      {userInitialized && user && (
+        <View sx={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Ionicons name="checkmark-circle" size={20} color="green" />
+          <Text sx={{ fontSize: 16, color: 'black', fontWeight: 'bold', }}>
+            Signed in as {user.displayName}
+          </Text>
+        </View>
+
+      )}
+
+      {userInitialized && !user && (
+        <>
+          <SignInWithGoogleButton />
+          <Text sx={{
+            fontSize: 14,
+            color: 'black',
+            marginY: 10,
+            textAlign: 'center'
+          }}>
+            Try visiting the user link{'\n'}without authenticating first.
+          </Text>
+        </>
+      )}
 
     </View >
   )

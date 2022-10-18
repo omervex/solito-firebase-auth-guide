@@ -1,4 +1,4 @@
-# Blank Solito Example Monorepo 🕴
+# Solito + Fireabase Auth Example Monorepo 🕴
 
 ```sh
 npx create-solito-app@latest my-solito-app
@@ -13,8 +13,10 @@ npx create-solito-app@latest my-solito-app
 ## 🔦 About
 
 This monorepo is a blank(ish) starter for an Expo + Next.js app.
+This monorepo also includes `react-native-firebase` for native and firebase JS SDK for web.
 
 While it's pretty barebones, it does a lot of the annoying config for you. The folder structure is opinionated, based on my long experience building for this stack.
+You need to create a Firebase project and configure your project based ont [this](add_link) guide.
 
 ## 📦 Included packages
 
